@@ -46,7 +46,7 @@
                 <div class="col-lg-8 col-md-12 px-xl-5 px-lg-4 px-5">
                     <section class="mb-5">
                         <section>
-                            <h3 class="section-title">6+ Years</h3>
+                            <h3 class="section-title"><span id="exp-cal"></span> Years</h3>
                             <p>As I am working in the Design & Development Industry for about several years, I understand that my job is to create an interface that gives the user exactly what they need and make sure they understand it. To do this, I explore, share and learn new technologies and techniques that can make me excel at what i do.</p>
                         </section>
                         <div class="row">
@@ -549,5 +549,98 @@
       </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+      <script>
+
+
+        var exp1 = new Date('02/01/2014');
+        var exp1_2 = new Date('12/01/2013');
+        var difference = exp1.getTime() - exp1_2.getTime();
+        console.log(difference);
+        var Total_exp1 = Math.ceil(difference / (1000 * 3600 * 24));
+        console.log(Total_exp1 + 'Output');
+
+        var years = Math.floor(Total_exp1 / 365);
+        var months = Math.floor(Total_exp1 % 365 / 30);
+        var days = Math.floor(Total_exp1 % 365 % 30);
+        var formatedExp1 = { years:years,  months:months , days:days }
+        console.log( formatedExp1 );
+
+        var exp2 = new Date('02/01/2018');
+        var exp2_2 = new Date('12/01/2016');
+        var difference = exp2.getTime() - exp2_2.getTime();
+        console.log(difference);
+        var Total_exp2 = Math.ceil(difference / (1000 * 3600 * 24));
+        console.log(Total_exp2 + 'Output');
+
+        var years = Math.floor(Total_exp2 / 365);
+        var months = Math.floor(Total_exp2 % 365 / 30);
+        var days = Math.floor(Total_exp2 % 365 % 30);
+        var formatedExp2 = { years:years,  months:months , days:days }
+        console.log( formatedExp2 );
+
+        
+        var exp3 = new Date('10/01/2018');
+        var exp3_2 = new Date('02/01/2018');
+        var difference = exp3.getTime() - exp3_2.getTime();
+        console.log(difference);
+        var Total_exp3 = Math.ceil(difference / (1000 * 3600 * 24));
+        console.log(Total_exp3 + 'Output');
+
+        var years = Math.floor(Total_exp3 / 365);
+        var months = Math.floor(Total_exp3 % 365 / 30);
+        var days = Math.floor(Total_exp3 % 365 % 30);
+        var formatedExp3 = { years:years,  months:months , days:days }
+        console.log( formatedExp3 );
+
+        var exp4 = new Date('03/01/2022');
+        var exp4_2 = new Date('10/01/2018');
+        var difference = exp4.getTime() - exp4_2.getTime();
+        console.log(difference);
+        var Total_exp4 = Math.ceil(difference / (1000 * 3600 * 24));
+        console.log(Total_exp4 + 'Output');
+
+        var years = Math.floor(Total_exp4 / 365);
+        var months = Math.floor(Total_exp4 % 365 / 30);
+        var days = Math.floor(Total_exp4 % 365 % 30);
+        var formatedExp4 = { years:years,  months:months , days:days }
+        console.log( formatedExp4 );
+
+        var exp5 = new Date();
+        var exp5_2 = new Date('04/01/2022');
+        var difference = exp5.getTime() - exp5_2.getTime();
+        console.log(difference);
+        var Total_exp5 = Math.ceil(difference / (1000 * 3600 * 24));
+        console.log(Total_exp5 + 'Output');
+
+        var years = Math.floor(Total_exp5 / 365);
+        var months = Math.floor(Total_exp5 % 365 / 30);
+        var days = Math.floor(Total_exp5 % 365 % 30);
+        var formatedExp5 = { years:years,  months:months , days:days }
+        console.log( formatedExp5 );
+
+        // var overallExp = ( formatedExp1 + formatedExp2 + formatedExp3 + formatedExp4 + formatedExp5 )
+        // console.log(overallExp);
+
+        var overallDays = ( Total_exp1 + Total_exp2 + Total_exp3 + Total_exp4 + Total_exp5 )
+        console.log(overallDays);
+
+        var years = Math.floor(overallDays / 365);
+        var months = Math.floor(overallDays % 365 / 30);
+        var days = Math.floor(overallDays % 365 % 30);
+        var TotalYears = { years:years,  months:months , days:days }
+        console.log( TotalYears.years, 'y' , TotalYears.months, 'm' );
+
+        const experience = {
+            value: function() {
+                return this.years + "." + this.months ;
+            }
+        }
+
+        document.getElementById("exp-cal").innerHTML = experience.value.call(TotalYears);
+
+
+      </script>
+
 </body>
 </html>
